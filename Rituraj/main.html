@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* .form-control small {
+            visibility: hidden;
+        }
+
+        .form-control.error small {
+            visibility: visible;
+        } */
+        .form-group {
+            padding: 12px 0px;
+        }
+
+        table {
+            border: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Company Contact</h3>
+        <form action="index.html" role="form" onsubmit="signUp(event); myFunc();" id="form">
+            <div class="form-group">
+                <label for="">Company Name</label>
+                <input type="text" id="cname" required>
+            </div>
+            <div class="form-group">
+                <label for="">Mailing Address</label>
+                <input type="text" id="madd" required>
+            </div>
+            <div class="form-group">
+                <label for="">TELEPHONE</label>
+                <input type="tel" id="phone" onkeydown="phoneval()">
+                <span id="text3"></span>
+            </div>
+            <div class="form-group">
+                <label for="">FAX</label>
+                <input type="tel" id="fax" required>
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" id="email" onkeydown="validation()">
+                <span id="text"></span>
+            </div>
+            <div class="form-group">
+                <label for="">POINT OF CONTACT NAME & TITLE</label>
+                <input type="text" id="cpointCntTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="">website</label>
+                <input type="url" id="website" required>
+            </div>
+
+            <div class="form-group">
+                <label for="">Contact Email</label>
+                <input type="email" id="cemail" onkeydown="valemail()">
+                <span id="text2"></span>
+            </div>
+            <div class="form-group">
+                <label for="">Contact Phone 1</label>
+                <input type="tel" id="phone1" required>
+            </div>
+            <div class="form-group">
+                <label for="">Contact Phone 2</label>
+                <input type="tel" id="phone2" required>
+            </div>
+            <h3>Company Overview</h3>
+            <div class="form-group">
+                <label for="">General Details of goods and service</label>
+                <input type="text" id="cserviceGoods" required>
+            </div>
+            <div class="form-group">
+                <label for="">Date Company Established</label>
+                <input type="text" id="csestab" required>
+            </div>
+            <div class="form-group">
+                <label for="">Gross Annual Sales</label>
+                <input type="text" id="cgas" required>
+            </div>
+            <div class="form-group">
+                <label for="">Geographic Service Area</label>
+                <input type="text" id="cgsa" required>
+            </div>
+            <div class="form-group">
+                <label for="">Legal Structure</label>
+                <input type="text" id="cls" required>
+            </div>
+            <div class="form-group">
+                <label for="">Business Type</label>
+                <input type="text" id="cbt" required>
+            </div>
+            <div class="form-group">
+                <label for="">Years Previously Registered</label>
+                <input type="text" id="cypr" required>
+            </div>
+            <div class="form-group">
+                <label for="">Insured?</label>
+                <input type="radio" id="Iyes" name="insured"><label for="yes">YES</label>
+                <input type="radio" id="Ino" name="insured"><label for="no">NO</label>
+            </div>
+            <div class="form-group">
+                <label for="">Bonded?</label>
+                <input type="radio" id="Byes" name="bonded"><label for="yes">YES</label>
+                <input type="radio" id="Bno" name="bonded"><label for="no">NO</label>
+            </div>
+            <div class="form-group">
+                <label for="">Liscensed?</label>
+                <input type="radio" id="Lyes" name="liscensed"><label for="yes">YES</label>
+                <input type="radio" id="Lno" name="liscensed"><label for="no">NO</label>
+            </div>
+            <div class="form-group">
+                <label for="">License Number</label>
+                <input type="text" id="cln" required>
+            </div>
+            <div class="form-group">
+                <label for="">Additional Info</label>
+                <input type="text" id="cai" required>
+            </div>
+            <h3>BANKING INFORMATION</h3>
+            <div class="form-group">
+                <label for="">Bank Name</label>
+                <input type="text" id="bankName" required>
+            </div>
+            <div class="form-group">
+                <label for="">Bank Address</label>
+                <input type="text" id="bankadd" required>
+            </div>
+            <div class="form-group">
+                <label for="">Beneficiary Name</label>
+                <input type="text" id="BenName" required>
+            </div>
+            <div class="form-group">
+                <label for="">Account Number</label>
+                <input type="text" id="accNo" required>
+            </div>
+
+            <h3>CERTIFICATION</h3>
+            <p>I hereby Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic nisi assumenda quo. Unde quaerat
+                distinctio nobis esse officiis tempore deleniti exercitationem aut! Praesentium mollitia odio
+                voluptatem. Nihil possimus vitae et distinctio nisi, odit quaerat accusamus. Deleniti culpa earum nisi
+                nostrum.</p>
+            <div class="form-group">
+                <label for="">Printed/Typed Name</label>
+                <input type="text" id="printtype" required>
+            </div>
+            <div class="form-group">
+                <label for="">Title</label>
+                <input type="text" id="title" required>
+            </div>
+            <div class="form-group">
+                <label for="">Signature</label>
+                <input type="file" type="file" id="myFile" name="filename" required>
+            </div>
+            <div class="form-group">
+                <label for="">Date</label>
+                <input type="date" id="mydate">
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <!-- local and session -->
+
+        <h2>Local Storage</h2>
+        <div id="output">
+
+        </div>
+        <h2>Session Storage</h2>
+        <div id="output2">
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+    function validation() 
+    {
+        var form = document.getElementById('form');
+        var email = document.getElementById('email').value;
+        var text = document.getElementById('text');
+        var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (email.match(pattern)) {
+            form.classList.add("valid");
+            form.classList.remove("Invalid");
+            text.innerHTML = "Your Email is Valid";
+        }
+        else
+        {
+            form.classList.remove("valid");
+            form.classList.add("Invalid");
+            text.innerHTML = "Your Email is Invalid";
+        }
+    }
+    function valemail() 
+    {
+        var form = document.getElementById('form');
+        var cemail = document.getElementById('cemail').value;
+        var text2 = document.getElementById("text2");
+        var pattern2 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (cemail.match(pattern2)) {
+            form.classList.add("valid");
+            form.classList.remove("Invalid");
+            text2.innerHTML = "Your Email is Valid";
+            
+        }
+        else
+        {
+            form.classList.remove("valid");
+            form.classList.add("Invalid");
+            text2.innerHTML = "Your Email is Invalid";
+        }
+    }
+    function phoneval(){
+        var form = document.getElementById('form');
+        var phone = document.getElementById('phone').value;
+        var text3 = document.getElementById('text3');
+        var pattern3 = /^+91(7\d|8\d|9\d)\d{9}$/;
+        if (phone.match(pattern3)) {
+            form.classList.add("valid");
+            form.classList.remove("Invalid");
+            text3.innerHTML = "Your phone number is valid";
+            
+        }
+        else
+        {
+            form.classList.remove("valid");
+            form.classList.add("Invalid");
+            text2.innerHTML = "Your phone number is Invalid";
+        }
+    }
+    const signUp = e => {
+            let formData = {
+                cname: document.getElementById('cname').value,
+                madd: document.getElementById('madd').value,
+                phone: document.getElementById('phone').value,
+                fax: document.getElementById('fax').value,
+                email: document.getElementById('email').value,
+                cpointCntTitle: document.getElementById('cpointCntTitle').value,
+                website: document.getElementById('website').value,
+                cemail: document.getElementById('cemail').value,
+                phone1: document.getElementById('phone1').value,
+                phone2: document.getElementById('phone2').value,
+                cserviceGoods: document.getElementById('cserviceGoods').value,
+                csestab: document.getElementById('csestab').value,
+                cgas: document.getElementById('cgas').value,
+                cgsa: document.getElementById('cgsa').value,
+                cls: document.getElementById('cls').value,
+                cbt: document.getElementById('cbt').value,
+                cypr: document.getElementById('cypr').value,
+                Iyes: document.getElementById('Iyes').value,
+                Ino: document.getElementById('Ino').value,
+                Byes: document.getElementById('Byes').value,
+                Bno: document.getElementById('Bno').value,
+                Lyes: document.getElementById('Lyes').value,
+                Lno: document.getElementById('Lno').value,
+                cln: document.getElementById('cln').value,
+                cai: document.getElementById('cai').value,
+                bankName: document.getElementById('bankName').value,
+                bankadd: document.getElementById('bankadd').value,
+                BenName: document.getElementById('BenName').value,
+                accNo: document.getElementById('accNo').value,
+                printtype: document.getElementById('printtype').value,
+                title: document.getElementById('title').value,
+                myFile: document.getElementById('myFile').value,
+                mydate: document.getElementById('mydate').value
+            }
+            localStorage.setItem('formData', JSON.stringify(formData));
+            sessionStorage.setItem('formData', JSON.stringify(formData));
+            //console.log(localStorage.getItem('formData'));
+            dispDataL();
+            dispDataS();
+            e.preventDefault();
+        }
+        
+        function myFunc() {
+            window.open("index.html", "_blank");
+
+        }
+        function dispDataL() {
+            //console.log(JSON.parse(localStorage.getItem('formData')));
+            let { cname, madd, phone, fax,email,cpointCntTitle,website,cemail,phone1,phone2,cserviceGoods,csestab,cgas,cgsa,cls,cbt ,cypr ,Iyes,Ino,Byes ,Bno,Lyes,Lno,cln,cai } = JSON.parse(localStorage.getItem('formData'));
+            var output = document.getElementById('output');
+            output.innerHTML = `
+                 <table>
+                     <tbody>
+                         <tr>
+                             <td>Company Name</td>
+                             <td>${cname}</td>
+                         </tr>
+                         <tr>
+                             <td>Email</td>
+                             <td>${madd}</td>
+                         </tr>
+                         <tr>
+                             <td>Phone</td>
+                             <td>${phone}</td>
+                         </tr>
+                         <tr>
+                             <td>Fax</td>
+                             <td>${fax}</td>
+                         </tr>
+                         <tr>
+                             <td>email</td>
+                             <td>${email}</td>
+                         </tr>
+                         <tr>
+                             <td>POINT OF CONTACT NAME & TITLE</td>
+                             <td>${cpointCntTitle}</td>
+                         </tr>
+                         <tr>
+                             <td>Website</td>
+                             <td>${website}</td>
+                         </tr>
+                         <tr>
+                             <td>Contact Email</td>
+                             <td>${cemail}</td>
+                         </tr>
+                         <tr>
+                             <td>Phone 1</td>
+                             <td>${phone1}</td>
+                         </tr>
+                         <tr>
+                             <td>Phone 2</td>
+                             <td>${phone2}</td>
+                         </tr>
+                         <tr>
+                             <td>Service Goods</td>
+                             <td>${cserviceGoods}</td>
+                         </tr>
+                         <tr>
+                             <td>Date company established</td>
+                             <td>${csestab}</td>
+                         </tr>
+                         <tr>
+                             <td>Gross Annual Sales</td>
+                             <td>${cgas}</td>
+                         </tr>
+                         <tr>
+                             <td>Gross Service Area</td>
+                             <td>${cgsa}</td>
+                         </tr>
+                         <tr>
+                             <td>Legal Structure</td>
+                             <td>${cls}</td>
+                         </tr>
+                         <tr>
+                             <td>Business Type</td>
+                             <td>${cbt}</td>
+                         </tr>
+                         <tr>
+                             <td>Years Previously Registered</td>
+                             <td>${cypr}</td>
+                         </tr>
+                         <tr>
+                             <td>Insured ?</td>
+                             <td>${Iyes}</td>
+                             <td>${Ino}</td>
+                         </tr>
+                         <tr>
+                             <td>Bonded?</td>
+                             <td>${Byes}</td>
+                             <td>${Bno}</td>
+                         </tr>
+                         <tr>
+                             <td>Liscensed?</td>
+                             <td>${Lyes}</td>
+                             <td>${Lno}</td>
+                         </tr>
+                         <tr>
+                             <td>Liscense No</td>
+                             <td>${cln}</td>
+                         </tr>
+                         <tr>
+                             <td>Additional Info</td>
+                             <td>${cai}</td>
+                         </tr>
+                         <tr>
+                             <td>Bank Name</td>
+                             <td>${bankName}</td>
+                         </tr>
+                         <tr>
+                             <td>Bank Address</td>
+                             <td>${bankadd}</td>
+                         </tr>
+                         <tr>
+                             <td>Benificiary Name</td>
+                             <td>${BenName}</td>
+                         </tr>
+                         <tr>
+                             <td>Account Number</td>
+                             <td>${accNo}</td>
+                         </tr>
+                         <tr>
+                             <td>Printed/Typed Name</td>
+                             <td>${printtype}</td>
+                         </tr>
+                         <tr>
+                             <td>Title</td>
+                             <td>${title}</td>
+                         </tr>
+                         <tr>
+                             <td>Signature</td>
+                             <td>${myFile}</td>
+                         </tr>
+                         <tr>
+                             <td>Date</td>
+                             <td>${mydate}</td>
+                         </tr>
+                     </tbody>
+                 </table>
+                      `;
+        }
+        // Session Function
+        function dispDataS() {
+            //console.log(JSON.parse(localStorage.getItem('formData')));
+            let { cname, madd, phone, fax,email,cpointCntTitle,website,cemail,phone1,phone2,cserviceGoods,csestab,cgas,cgsa,cls,cbt ,cypr ,Iyes,Ino,Byes ,Bno,Lyes,Lno,cln,cai } = JSON.parse(sessionStorage.getItem('formData'));
+            var output2 = document.getElementById('output2');
+            output2.innerHTML = `
+            <table>
+                     <tbody>
+                         <tr>
+                             <td>Company Name</td>
+                             <td>${cname}</td>
+                         </tr>
+                         <tr>
+                             <td>Email</td>
+                             <td>${madd}</td>
+                         </tr>
+                         <tr>
+                             <td>Phone</td>
+                             <td>${phone}</td>
+                         </tr>
+                         <tr>
+                             <td>Fax</td>
+                             <td>${fax}</td>
+                         </tr>
+                         <tr>
+                             <td>email</td>
+                             <td>${email}</td>
+                         </tr>
+                         <tr>
+                             <td>POINT OF CONTACT NAME & TITLE</td>
+                             <td>${cpointCntTitle}</td>
+                         </tr>
+                         <tr>
+                             <td>Website</td>
+                             <td>${website}</td>
+                         </tr>
+                         <tr>
+                             <td>Contact Email</td>
+                             <td>${cemail}</td>
+                         </tr>
+                         <tr>
+                             <td>Phone 1</td>
+                             <td>${phone1}</td>
+                         </tr>
+                         <tr>
+                             <td>Phone 2</td>
+                             <td>${phone2}</td>
+                         </tr>
+                         <tr>
+                             <td>Service Goods</td>
+                             <td>${cserviceGoods}</td>
+                         </tr>
+                         <tr>
+                             <td>Date company established</td>
+                             <td>${csestab}</td>
+                         </tr>
+                         <tr>
+                             <td>Gross Annual Sales</td>
+                             <td>${cgas}</td>
+                         </tr>
+                         <tr>
+                             <td>Gross Service Area</td>
+                             <td>${cgsa}</td>
+                         </tr>
+                         <tr>
+                             <td>Legal Structure</td>
+                             <td>${cls}</td>
+                         </tr>
+                         <tr>
+                             <td>Business Type</td>
+                             <td>${cbt}</td>
+                         </tr>
+                         <tr>
+                             <td>Years Previously Registered</td>
+                             <td>${cypr}</td>
+                         </tr>
+                         <tr>
+                             <td>Insured ?</td>
+                             <td>${Iyes}</td>
+                             <td>${Ino}</td>
+                         </tr>
+                         <tr>
+                             <td>Bonded?</td>
+                             <td>${Byes}</td>
+                             <td>${Bno}</td>
+                         </tr>
+                         <tr>
+                             <td>Liscensed?</td>
+                             <td>${Lyes}</td>
+                             <td>${Lno}</td>
+                         </tr>
+                         <tr>
+                             <td>Liscense No</td>
+                             <td>${cln}</td>
+                         </tr>
+                         <tr>
+                             <td>Additional Info</td>
+                             <td>${cai}</td>
+                         </tr>
+                         <tr>
+                             <td>Bank Name</td>
+                             <td>${bankName}</td>
+                         </tr>
+                         <tr>
+                             <td>Bank Address</td>
+                             <td>${bankadd}</td>
+                         </tr>
+                         <tr>
+                             <td>Benificiary Name</td>
+                             <td>${BenName}</td>
+                         </tr>
+                         <tr>
+                             <td>Account Number</td>
+                             <td>${accNo}</td>
+                         </tr>
+                         <tr>
+                             <td>Printed/Typed Name</td>
+                             <td>${printtype}</td>
+                         </tr>
+                         <tr>
+                             <td>Title</td>
+                             <td>${title}</td>
+                         </tr>
+                         <tr>
+                             <td>Signature</td>
+                             <td>${myFile}</td>
+                         </tr>
+                         <tr>
+                             <td>Date</td>
+                             <td>${mydate}</td>
+                         </tr>
+                     </tbody>
+                 </table>
+            `;
+        }
+    </script>
+</body>
+
+</html>

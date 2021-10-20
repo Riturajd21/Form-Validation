@@ -1,0 +1,18 @@
+.container h3{
+    padding: 10px;
+    background-color: tomato;
+}
+body{
+    background-color:violet;
+}
+.container .form-group{
+     padding: 3px;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+}
